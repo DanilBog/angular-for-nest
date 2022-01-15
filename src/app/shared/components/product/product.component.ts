@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   putToCart(): void {
     this.product.quantity = 1;
     let oldCart: Product[] = [];
-    if (JSON.parse(localStorage.cart)) {
+    if (localStorage.cart) {
       oldCart = JSON.parse(localStorage.cart);
     }
     const index = oldCart.findIndex(res => res.id === this.product.id);

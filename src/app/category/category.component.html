@@ -1,2 +1,5 @@
 <!-- <p>{{ products$ | async | json }}</p> -->
-<app-product *ngFor="let product of products$ | async" [product]="product"></app-product>
+<div class="container">
+  <app-product *ngFor="let product of products$ | async" [product]="product"></app-product>
+</div>
+

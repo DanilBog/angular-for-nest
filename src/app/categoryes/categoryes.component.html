@@ -1,5 +1,11 @@
 <div *ngIf="categoryes">
   <!-- <p *ngFor="let category of categoryes">{{category.title}}</p> -->
-  <a *ngFor="let category of categoryes" class="button" routerLink="category/{{category.id}}">{{category.title}}</a>
+  <div class="category" *ngFor="let category of categoryes">
+    <a *ngIf="!category.parent_id" class="button" routerLink="category/{{category.id}}">{{category.title}}</a>
+    <div class="category__child" *ngFor="let child of categoryes">
+      <a *ngIf="category.id === child.parent_id" class="button" routerLink="category/{{child.id}}">{{child.title}}</a>
+    </div>
+  </div>
+  
 </div>
 
